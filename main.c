@@ -14,6 +14,7 @@ void Display();
 int i, j, k; char choice='y';
 
 struct student{
+    int sem;
     char USN[10];
     char name[20];
     int subMarks[5];
@@ -62,6 +63,8 @@ void getSubjectDetails(){
 }
 void getStudentDetails(){
     printf("Enter student details:\n");
+    printf("Sem - ");
+    scanf("%d",&stu[i].sem);
     printf("USN - ");
     scanf("%s",stu[i].USN);
     printf("Name - ");
@@ -93,9 +96,9 @@ void calSGPA(){
 
 }
 void Display(){
-    printf("Sl.No \t USN \t Name \t %s \t %s \t %s \t %s \t %s \t SGPA \n", sub[0].name, sub[1].name, sub[2].name, sub[3].name, sub[4].name);
+    printf("Sl.No \t Sem \t USN \t Name \t %s \t %s \t %s \t %s \t %s \t SGPA \n", sub[0].name, sub[1].name, sub[2].name, sub[3].name, sub[4].name);
     for (j=0; j<i;j++){
-        printf("%d \t %s \t %s \t %d \t %d \t %d \t %d \t %d \t %d \n", j, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
+        printf("%d \t %d \t %s \t %s \t %d \t %d \t %d \t %d \t %d \t %d \n", j, stu[j].sem, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
     }
 }
 
