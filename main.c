@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void getSubjectDetails();
 void getStudentDetails();
@@ -11,7 +12,7 @@ void marksToGrade();
 void calSGPA();
 void Display();
 
-int i, j, k; char choice='y';
+int i, j, k, choice=1;
 
 struct student{
     int sem;
@@ -35,8 +36,8 @@ int main() {
     // Input Subject Details
     getSubjectDetails();
 
-    while(choice=='y' || choice=='Y'){
-        i=0;
+    i=0;
+    while(choice==1){
         // Input Student Details, Marks, etc
         getStudentDetails();
         // Convert Marks to Grade Equivalent
@@ -44,15 +45,16 @@ int main() {
         // Calculate SGPA from marks inputted
         calSGPA();
         // Ask to continue
-        printf("Enter details for another student?(Y/n)\n");
-        scanf("%c", &choice);
-        if(choice=='N' || choice=='n'){
-            break;
+        printf("Press 1 to enter details for another student.\nPress any other key to view table and exit.\n");
+        scanf("%d", &choice);
+        if(choice!=1){
+            Display();
+            printf("\n\nExiting.\n");
+            exit(1);
         }
-        i++;
+        else
+            i++; // To add another student, we increment i as all the functions work with stu[i]
     }
-    // Display data and results
-    Display();
     return 0;
 }
 void getSubjectDetails(){
@@ -97,26 +99,7 @@ void calSGPA(){
 }
 void Display(){
     printf("Sl.No \t Sem \t USN \t Name \t %s \t %s \t %s \t %s \t %s \t SGPA \n", sub[0].name, sub[1].name, sub[2].name, sub[3].name, sub[4].name);
-    for (j=0; j<i;j++){
+    for (j=0; j<=i;j++){
         printf("%d \t %d \t %s \t %s \t %d \t %d \t %d \t %d \t %d \t %d \n", j, stu[j].sem, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
     }
 }
-
-/*        ----- CURRENT OUTPUT -----
-Welcome message.
-Enter the name and credits of the subject:
-(eg. "MAT 4") Note: Total credits should equal 20.
-M 4
-E 4
-D 3
-C 5
-N 4
-Enter student details:
-USN - 18CS096
-Name - Shaan_S
-Enter marks in M E D C N:
-(eg. "90 32 43 54 65")	78 84 94 74 90
-Enter details for another student?(Y/n)
-Sl.No 	    USN 	 Name 	      M 	 E 	      D 	 C 	     N 	    SGPA
-0 	    18CS096 	 Shaan_S 	 78 	 84 	 94 	 74 	 90 	 9
- */
