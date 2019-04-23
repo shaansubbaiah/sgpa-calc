@@ -1,3 +1,4 @@
+
 /*
  *  SEM 2 Project - To Calculate SGPA Of Students
  *  https://github.com/shaansubbaiah/sgpa-calc
@@ -101,6 +102,6 @@ void calSGPA(){
 void Display(){
     printf("Sl.No \t Sem \t USN \t Name \t %s \t %s \t %s \t %s \t %s \t SGPA \n", sub[0].name, sub[1].name, sub[2].name, sub[3].name, sub[4].name);
     for (j=0; j<=i;j++){
-        printf("%d \t %d \t %s \t %s \t %d \t %d \t %d \t %d \t %d \t %d \n\n", j, stu[j].sem, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
+        printf("%d \t\t\t %d \t %s \t %s \t %d \t %d \t %d \t %d \t %d \t %d \n\n", j, stu[j].sem, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
     }
 }
