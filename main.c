@@ -73,12 +73,16 @@ int main() {
     }
     return 0;
 }
+
+
 void getSubjectDetails(){
     printf("Enter the name and credits of each subject:\n(ex. 'MATH 4'.)\n");
     for(i=0;i<5;i++){
         scanf("%s %d", sub[i].name, &sub[i].credits);
     }
 }
+
+
 void getStudentDetails(){
     printf("\nEnter student details:\n");
     printf("Sem - ");
@@ -90,6 +94,8 @@ void getStudentDetails(){
     printf("Enter marks in \n %s %s %s %s %s:\n(eg. \"90 32 43 54 65\")\n",sub[0].name, sub[1].name, sub[2].name, sub[3].name, sub[4].name);
     scanf("%d %d %d %d %d", &stu[i].subMarks[0], &stu[i].subMarks[1], &stu[i].subMarks[2], &stu[i].subMarks[3], &stu[i].subMarks[4]);
 }
+
+
 void marksToGrade(){
     for(k=0;k<5;k++){
         if(stu[i].subMarks[k]>=90)
@@ -108,11 +114,15 @@ void marksToGrade(){
             stu[i].subGrade[k]=0;
     }
 }
+
+
 void calSGPA(){
     // SGPA calculated as ([product of grade marks] * [credits for each subject])/(total credits)
     stu[i].SGPA=(stu[i].subGrade[0]*sub[0].credits + stu[i].subGrade[1]*sub[1].credits + stu[i].subGrade[2]*sub[2].credits + stu[i].subGrade[3]*sub[3].credits + stu[i].subGrade[4]*sub[4].credits)/20;
 
 }
+
+
 void Display(){
     // Prints title row of table
     printf("\n%3s %3s \t %10s %15s %5s %5s %5s %5s %5s %5s \n", "SL", "SEM", "USN", "NAME", sub[0].name, sub[1].name, sub[2].name, sub[3].name, sub[4].name, "SGPA");
