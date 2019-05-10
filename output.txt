@@ -1,36 +1,52 @@
-~~~~~~~~ Application to calculate SGPA ~~~~~~~~
-Enter the name and credits of the subject:
-(eg. "MAT 4") Note: Total credits should equal 20.
-MAT 4
-CHM 5
-EEE 4
-EED 3
-MCH 4
+~~~~~~~~ Application To Calculate SGPA ~~~~~~~~
+~                                             ~
+~                                             ~
+~                                             ~
+~~~~~~~~~~~~~~~~~~~ Welcome ~~~~~~~~~~~~~~~~~~~
+
+Enter the name and credits of each subject:
+(ex. 'MATH 4'.)
+MATH 4
+CHEM 5
+DRAW 3
+ELEC 4
+MECH 4
+
 Enter student details:
 Sem - 1
-USN - CS036
-Name - Dave
-Enter marks in MAT CHM EEE EED MCH:
+USN - 1BM18CS007
+Name - AYYMAN
+Enter marks in
+ MATH CHEM DRAW ELEC MECH:
 (eg. "90 32 43 54 65")
-87 90 85 68 75
-Press 1 to enter details for another student.
-Press any other key to view table and exit.
+98 90 97 78 88
+
+Enter 1 to enter details for another student.
+ 	 OR
+Enter any other key to view table and exit.
 1
+
 Enter student details:
 Sem - 1
-USN - IS012
-Name - Lee
-Enter marks in MAT CHM EEE EED MCH:
+USN - 1BM18CS064
+Name - SEAN
+Enter marks in
+ MATH CHEM DRAW ELEC MECH:
 (eg. "90 32 43 54 65")
-100 85 82 90 78
-Press 1 to enter details for another student.
-Press any other key to view table and exit.
+98 78 96 77 82
+
+Enter 1 to enter details for another student.
+ 	 OR
+Enter any other key to view table and exit.
 2
-Sl.No 	 Sem 	 USN 	 Name 	 MAT 	 CHM 	 EEE 	 EED 	 MCH 	 SGPA
-0 	        1 	 CS036 	 Dave 	 87 	 90 	 85 	 68 	 75 	 9
 
-1 	        1 	 IS012 	 Lee 	 100 	 85 	 82 	 90 	 78 	 9
+ SL SEM 	        USN            NAME  MATH  CHEM  DRAW  ELEC  MECH  SGPA
+  1   1 	 1BM18CS007          AYYMAN    98    90    97    78    88     9
+
+  2   1 	 1BM18CS064            SEAN    98    78    96    77    82     9
 
 
 
-Exiting.
+~~~~~~~~~~~~~~~~~~~ Exiting. ~~~~~~~~~~~~~~~~~~
+
+Process finished with exit code 1
