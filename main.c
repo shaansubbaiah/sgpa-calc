@@ -23,7 +23,7 @@ struct student{
     char name[20];
     int subMarks[5];
     int subGrade[5];
-    int SGPA;
+    float SGPA;
 };
 struct student stu[10];
 
@@ -100,15 +100,15 @@ void marksToGrade(){
     for(k=0;k<5;k++){
         if(stu[i].subMarks[k]>=90)
             stu[i].subGrade[k]=10;
-        else if(stu[i].subMarks[k]>=75 && stu[i].subMarks[k]<90)
+        else if(stu[i].subMarks[k]>=75)
             stu[i].subGrade[k]=9;
-        else if(stu[i].subMarks[k]>=60 && stu[i].subMarks[k]<75)
+        else if(stu[i].subMarks[k]>=60)
             stu[i].subGrade[k]=8;
-        else if(stu[i].subMarks[k]>=50 && stu[i].subMarks[k]<60)
+        else if(stu[i].subMarks[k]>=50)
             stu[i].subGrade[k]=7;
-        else if(stu[i].subMarks[k]>=45 && stu[i].subMarks[k]<50)
+        else if(stu[i].subMarks[k]>=45)
             stu[i].subGrade[k]=5;
-        else if(stu[i].subMarks[k]>=40 && stu[i].subMarks[k]<45)
+        else if(stu[i].subMarks[k]>=40)
             stu[i].subGrade[k]=4;
         else
             stu[i].subGrade[k]=0;
@@ -117,8 +117,8 @@ void marksToGrade(){
 
 
 void calSGPA(){
-    // SGPA calculated as ([product of grade marks] * [credits for each subject])/(total credits)
-    stu[i].SGPA=(stu[i].subGrade[0]*sub[0].credits + stu[i].subGrade[1]*sub[1].credits + stu[i].subGrade[2]*sub[2].credits + stu[i].subGrade[3]*sub[3].credits + stu[i].subGrade[4]*sub[4].credits)/20;
+    // SGPA calculated as ([grade marks] * [credits for each subject])/(total credits)
+    stu[i].SGPA=(float)(stu[i].subGrade[0]*sub[0].credits + stu[i].subGrade[1]*sub[1].credits + stu[i].subGrade[2]*sub[2].credits + stu[i].subGrade[3]*sub[3].credits + stu[i].subGrade[4]*sub[4].credits)/20.0;
 
 }
 
@@ -129,6 +129,6 @@ void Display(){
 
     // Prints individual student data on each row
     for (j=0; j<=i;j++){
-        printf("%3d %3d \t %10s %15s %5d %5d %5d %5d %5d %5d \n\n", j+1, stu[j].sem, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
+        printf("%3d %3d \t %10s %15s %5d %5d %5d %5d %5d %5.2f \n\n", j+1, stu[j].sem, stu[j].USN, stu[j].name, stu[j].subMarks[0], stu[j].subMarks[1], stu[j].subMarks[2], stu[j].subMarks[3], stu[j].subMarks[4], stu[j].SGPA);
     }
 }
